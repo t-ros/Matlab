@@ -6,8 +6,10 @@ p2 = [1 0 -10];      % p2(x) = x^2 - 10
 p3 = [0.5 -0.5 -8 0]; % p3(x) = -0.5x^3 + 8x - 0.5
 p4 = [-0.2 0 4 0 -2];     % p4(x) = 0.2x^2 + 2x - 4
 
-x_val=-1.5;
+%x_val=-1.5;
 % (b) Solicitar um valor de x dentro do intervalo [-4, 4]
+fprintf('alínea (b)\n')
+fprintf('-----------\n')
 x_val = input('Indique um valor de x entre -4 e 4: ');
 while x_val < -4 || x_val > 4
     disp('Erro! O valor deve estar entre -4 e 4.');
@@ -20,11 +22,13 @@ y2 = polyval(p2, x_val);
 y3 = polyval(p3, x_val);
 y4 = polyval(p4, x_val);
 
+fprintf('\nalínea (c)\n')
+fprintf('-----------')
 fprintf('\nValores dos polinómios para x = %.2f:\n', x_val);
-fprintf('p1(x) = %.2f\n', y1);
-fprintf('p2(x) = %.2f\n', y2);
-fprintf('p3(x) = %.2f\n', y3);
-fprintf('p4(x) = %.2f\n', y4);
+fprintf('p1(x = %.1f) = %.2f\n', x_val, y1);
+fprintf('p2(x = %.1f) = %.2f\n', x_val, y2);
+fprintf('p3(x = %.1f) = %.2f\n', x_val, y3);
+fprintf('p4(x = %.1f) = %.2f\n', x_val, y4);
 
 % (d) Gerar gráfico dos polinómios no intervalo [-5, 5]
 x = linspace(-5, 5, 100);
@@ -52,7 +56,9 @@ r2 = roots(p2);
 r3 = roots(p3);
 r4 = roots(p4);
 
-fprintf('\nZeros dos polinómios:\n');
+fprintf('\nalínea (f)\n')
+fprintf('-----------\n')
+% fprintf('Zeros dos polinómios:\n');
 fprintf('Zero do polinómio p1(x): %.2f\n', r1);
 fprintf('Zeros do polinómio p2(x): %.2f, %.2f\n', r2);
 fprintf('Zeros do polinómio p3(x): %.2f, %.2f, %.2f\n', r3);
@@ -66,9 +72,11 @@ plot(r4, zeros(size(r4)), 'mo', 'MarkerSize', 8, 'LineWidth', 2);
 
 % (g) Configurar legenda e rótulos
 xlabel('x'); ylabel('p(x)');
-legend('p1(x) = 3x + 4', 'p2(x) = x^2 - 10', ...
-       'p3(x) = 0.5x^3 - 0.5x^2 - 8x', 'p4(x) = -0.2x^4 + 4x^2 - 2', ...
-       'Location', 'best');
+legend('p1(x) = 3x + 4', ...
+       'p2(x) = x^2 - 10', ...
+       'p3(x) = 0.5x^3 - 0.5x^2 - 8x', ...
+       'p4(x) = -0.2x^4 + 4x^2 - 2', ...
+       'location', 'best');
 grid on;
 title('Representação dos Polinómios');
 hold off;
