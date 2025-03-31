@@ -1,5 +1,4 @@
 clc; clear; close all;
-
 %% a) Pontos e Interpolação Polinomial
 x = [0, pi/6, pi/3, pi/2];
 y = x.^(1/2) .* sin(x);
@@ -77,4 +76,4 @@ grid on;
 
 % Como usamos um polinômio de grau 3 para interpolar a função, este 
 % aproxima bem os valores da função original nesse intervalo resultando
-% nas sobreposição de linhas.
+% nas sobreposição de linhas e num erro menor.

@@ -1,4 +1,4 @@
-function [df, X] = NumDiff(f, a, b, N, option)
+function [df, X] = NumDiff(f, a, b, N, option) % Slide 8 e 9 [Chapter 08]
 %NUMDIFF Derivação numérica por diferenças finitas.
 %
 %   [df, X] = NumDiff(f, a, b, N, option) calcula numericamente a derivada
@@ -25,7 +25,7 @@ function [df, X] = NumDiff(f, a, b, N, option)
 %       - São feitas validações de todos os argumentos de entrada.
 %       - Esta função é útil para validações e estudos numéricos de derivadas.
 
-    % Validações iniciais
+    % Validações
     if ~isa(f, 'function_handle')
         error('f deve ser um handle para uma função.');
     end
@@ -39,9 +39,8 @@ function [df, X] = NumDiff(f, a, b, N, option)
         error('option deve ser uma string: ''forward'', ''backward'' ou ''central''.');
     end
 
-    % Criação do vetor x com N pontos uniformemente espaçados
     x = linspace(a, b, N);
-    h = x(2) - x(1);  % Passo entre pontos
+    h = (b-a)/(N-1);  % Passo entre pontos
     y = f(x);         % Avaliação da função nos pontos de x
 
     % Inicialização de df e X

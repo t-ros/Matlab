@@ -10,3 +10,8 @@ df = richardson(f, x_value, h);
 
 fprintf('Cálculo numérico da derivada\n');
 fprintf('f''(%.2f) = %.6f\n', x_value, df);
+
+% valores
+% (2*x+1)*exp(-3*x/4)
+% 1.5
+% 0.2
